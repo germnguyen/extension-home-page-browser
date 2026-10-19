@@ -1,5 +1,6 @@
 import LeafLogo from "./LeafLogo.jsx";
 import ThemeToggle from "./ThemeToggle.jsx";
+import WeatherBadge from "./WeatherBadge.jsx";
 
 export default function Header({ theme, onToggleTheme }) {
   return (
@@ -9,7 +10,7 @@ export default function Header({ theme, onToggleTheme }) {
         <span className="text-xl font-medium tracking-tight text-ink">myspace.</span>
       </div>
       <div className="flex items-center gap-4">
-        {/* Chỗ dành cho thời tiết (làm ở bước sau) */}
+        <WeatherBadge />
         <ThemeToggle theme={theme} onToggle={onToggleTheme} />
       </div>
     </header>
