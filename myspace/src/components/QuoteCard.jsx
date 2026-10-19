@@ -12,6 +12,7 @@ export default function QuoteCard({ className }) {
   return (
     <EditableCard
       className={className}
+      bodyClassName="justify-center"
       icon={<QuoteIcon />}
       title="Câu nói của tôi"
       value={value}

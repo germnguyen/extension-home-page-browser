@@ -12,6 +12,7 @@ export default function EditableCard({
   renderEditor,
   divider = false,
   className = "",
+  bodyClassName = "",
 }) {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(value);
@@ -66,7 +67,13 @@ export default function EditableCard({
         )}
       </header>
 
-      <div className={"flex-1 px-8 pb-7 " + (divider ? "pt-5" : "")}>
+      <div
+        className={
+          "flex min-h-0 flex-1 flex-col overflow-y-auto px-8 pb-7 " +
+          (divider ? "pt-5 " : "") +
+          bodyClassName
+        }
+      >
         {!loaded ? null : editing ? (
           <form onSubmit={submit} onKeyDown={onKeyDown} className="flex flex-col gap-4">
             {renderEditor(draft, setDraft)}

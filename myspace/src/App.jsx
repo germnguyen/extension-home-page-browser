@@ -21,8 +21,8 @@ export default function App() {
         <div className="hidden bg-line md:block" aria-hidden="true" />
 
         <section aria-label="Không gian cá nhân" className="flex flex-col gap-6">
-          <QuoteCard />
-          <NotesCard className="flex-1" />
+          <QuoteCard className="md:min-h-[13.5rem] md:flex-[1]" />
+          <NotesCard className="min-h-[14rem] md:min-h-0 md:flex-[4]" />
         </section>
       </main>
     </div>
