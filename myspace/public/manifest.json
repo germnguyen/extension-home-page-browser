@@ -1,0 +1,8 @@
+{
+  "manifest_version": 3,
+  "name": "myspace",
+  "version": "1.0.0",
+  "description": "Trang chủ cá nhân thay thế tab mới",
+  "chrome_url_overrides": { "newtab": "index.html" },
+  "permissions": ["storage"]
+}

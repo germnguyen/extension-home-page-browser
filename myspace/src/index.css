@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* Bản sáng: be và trắng ngà, xanh xám nhạt */
+:root {
+  --bg-image:
+    radial-gradient(ellipse 70% 60% at 15% 10%, #f1ece2 0%, transparent 70%),
+    radial-gradient(ellipse 60% 60% at 90% 90%, #d5dfe3 0%, transparent 70%),
+    linear-gradient(160deg, #e6e3db, #d9e0e4);
+  --ink: #2f3b46;
+  --mute: #5a6773;
+  --card: rgb(255 255 255 / 0.5);
+  --line: rgb(70 90 105 / 0.22);
+  --accent: #55776a;
+  --shadow: 0 10px 30px rgb(60 80 95 / 0.12);
+}
+
+/* Bản tối (mặc định): đen thuần, chữ trắng */
+[data-theme="dark"] {
+  --bg-image: #000000;
+  --ink: #ffffff;
+  --mute: #a3a3a3;
+  --card: #111111;
+  --line: #262626;
+  --accent: #8ed1c0;
+  --shadow: 0 0 0 transparent;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-mute: var(--mute);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --shadow-card: var(--shadow);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg-image);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.tile { background: var(--card); }
+[data-theme="dark"] .tile { background: var(--tint); }
